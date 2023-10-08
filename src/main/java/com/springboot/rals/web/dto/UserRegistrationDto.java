@@ -17,4 +17,8 @@ public class UserRegistrationDto {
         this.email = email;
         this.password = password;
     }
+
+    public UserRegistrationDto() {
+
+    }
 }
