@@ -5,6 +5,8 @@ import com.springboot.rals.entity.User;
 import com.springboot.rals.repository.UserRepository;
 import com.springboot.rals.service.UserService;
 import com.springboot.rals.web.dto.UserRegistrationDto;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -25,5 +27,10 @@ public class UserServiceImpl implements UserService {
                 registrationDto.getEmail(),
                 registrationDto.getPassword(), Arrays.asList(new Role("ROLES_USER")));
         return userRepository.save(user);
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return null;
     }
 }
